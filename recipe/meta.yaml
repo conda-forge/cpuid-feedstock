@@ -21,7 +21,7 @@ requirements:
     - pip
     - python >=3.3
   run:
-    - cpuid-native >=0.0.7
+    - cpuid-native >=0.0.8
     - python >=3.3
 
 test:
