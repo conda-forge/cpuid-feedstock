@@ -1,5 +1,5 @@
 {% set name = "cpuid" %}
-{% set version = "0.0.10" %}
+{% set version = "0.0.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cpuid-{{ version }}.tar.gz
-  sha256: ffac181826d3f8490be45eb6e805906b85d6431f657174ed074c42573edc04f1
+  sha256: e4e098dd7e0a76c16058306106c764a594d19c19d6577b905c8b2effb71e616c
   patches:
     - 0001-remove-readme.patch
 
@@ -21,7 +21,7 @@ requirements:
     - pip
     - python >=3.3
   run:
-    - cpuid-native >=0.0.7
+    - cpuid-native >=0.0.8
     - python >=3.3
 
 test:
