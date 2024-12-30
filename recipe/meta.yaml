@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cpuid-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cpuid-{{ version }}.tar.gz
   sha256: e4e098dd7e0a76c16058306106c764a594d19c19d6577b905c8b2effb71e616c
   patches:
     - 0001-remove-readme.patch
@@ -14,15 +14,16 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.3
+    - python {{ python_min }}
+    - setuptools
   run:
     - cpuid-native >=0.0.8
-    - python >=3.3
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -31,6 +32,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/fpelliccioni/cpuid-py
