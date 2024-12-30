@@ -20,6 +20,7 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    - setuptools
   run:
     - cpuid-native >=0.0.8
     - python >={{ python_min }}
