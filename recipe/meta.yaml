@@ -1,5 +1,5 @@
 {% set name = "cpuid" %}
-{% set version = "0.0.11" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cpuid-{{ version }}.tar.gz
-  sha256: e4e098dd7e0a76c16058306106c764a594d19c19d6577b905c8b2effb71e616c
+  sha256: fd5fd35fa29ede70de64235c38d0e824290606769b536a4fdf6c5951a989f38a
   patches:
     - 0001-remove-readme.patch
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
